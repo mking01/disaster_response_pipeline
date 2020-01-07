@@ -12,13 +12,8 @@ The project has three main parts:
 2.  A machine learning pipeline to build the model and classify messages
 3.  A web app to easily visualize and gain insights regarding messages received
 
-# Findings:
-
 
 # Repository File Descriptions:
--etl_pipeline.py: prepares and processes data for modeling
--ml_pipeline.py: builds model and classifies messages by type
--
 
 
 ![webapp](https://user-images.githubusercontent.com/59142310/71934443-16fa0580-316a-11ea-85b7-c1604fb937d0.PNG)
