@@ -19,4 +19,7 @@ The project has three main parts:
 -etl_pipeline.py: prepares and processes data for modeling
 -ml_pipeline.py: builds model and classifies messages by type
 -
-![alt text](https://raw.githubusercontent.com/mking01/disaster_response_pipeline/master/webapp.PNG)
+
+
+![webapp](https://user-images.githubusercontent.com/59142310/71934443-16fa0580-316a-11ea-85b7-c1604fb937d0.PNG)
+
