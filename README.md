@@ -1,10 +1,10 @@
 # Disaster Response Pipeline
 Analyze disaster data via building ETL and ML pipelines using data engineering skills
 
-# Installation:
+# Installation
 This project uses Python3 and HTML.  It uses the following packages: pandas, nltk, sklearn, numpy, flask, json, plotly, re,   pickle, and sqlalchemy.
   
-# Overview:
+# Overview
 This project builds a model to classify responses submitted after natural disasters.  The goal of the model is to correctly predict the type of message using only text.  Correct classification allows responders to prioritize responses and correctly and efficiently allocate resources at times when they are needed most.
 
 The project has three main parts:
@@ -13,7 +13,7 @@ The project has three main parts:
 3.  A web app to easily visualize and gain insights regarding messages received
 
 
-# Repository File Descriptions:
+# Repository File Descriptions
 - process_data.py:  ETL pipeline to process raw data for modeling.  It accepts .csv files as inputs and outputs a SQLlite database.
 - train_classifier.py:  Modeling pipeline to build model and create predictions for messages.  It uses the SQLlite database created from process_data.py and outputs a pickled model.
 - Disaster Response - ETL Pipeline.ipynb:  Contains the preliminary code used for analysis and developing the process_data.py pipeline
