@@ -2,7 +2,7 @@
 Analyze disaster data via building ETL and ML pipelines using data engineering skills
 
 # Installation
-This project uses Python3 and HTML.  It uses the following packages: pandas, nltk, sklearn, numpy, flask, json, plotly, re,   pickle, and sqlalchemy.
+This project uses the following packages: pandas, nltk, sklearn, numpy, flask, json, plotly, re, pickle, and sqlalchemy.
   
 # Overview
 This project builds a model to classify responses submitted after natural disasters.  The goal of the model is to correctly predict the type of message using only text.  Correct classification allows responders to prioritize responses and correctly and efficiently allocate resources at times when they are needed most.
