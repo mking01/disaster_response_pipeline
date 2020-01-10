@@ -22,4 +22,4 @@ URL:  https://view6914b2f4-3001.udacity-student-workspaces.com/
 
 <img width="1355" alt="Screen Shot 2020-01-10 at 8 54 53 AM" src="https://user-images.githubusercontent.com/59142310/72162085-e8a54180-3386-11ea-952c-313edcac278e.png">
 
-<img width="1392" alt="Screen Shot 2020-01-10 at 8 37 34 AM" src="https://user-images.githubusercontent.com/59142310/72161957-af6cd180-3386-11ea-86c8-b1134bdda9d1.png">
+<img width="1283" alt="Screen Shot 2020-01-10 at 8 55 57 AM" src="https://user-images.githubusercontent.com/59142310/72162160-0b375a80-3387-11ea-9692-d17d8f536c9c.png">
