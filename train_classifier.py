@@ -13,7 +13,7 @@ nltk.download('stopwords')
 
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
-from nltk.stem.porter import PorterStemmer
+from nltk.stem import WordNetLemmatizer
 
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
@@ -72,10 +72,13 @@ def tokenize(text):
     words = [w for w in words if w not in stopwords.words('english')]
 
     # Stem word tokens
-    stemmer = PorterStemmer()
-    stemmed = [stemmer.stem(word) for word in words]
+    lemmatizer = WordNetLemmatizer()
+    words = [lemmatizer.lemmatize(word) for word in words]
+
+    # Remove short words
+    words = [word for word in words if len(word) > 2]
     
-    return stemmed
+    return words
 
 def __get_scores(actual, predicted):
     """
@@ -89,14 +92,33 @@ def __get_scores(actual, predicted):
     f1_scores:  Float.  Median F1 score.
     """
     
-    f1_scores_list = []
-    
-    for i in range(np.shape(predicted)[1]):
-        f1s = f1_score(np.array(actual)[:, i], predicted[:, i], average = 'micro')
-        f1_scores_list.append(f1s)
-    
-    f1_scores = np.median(f1_scores_list)
-    return f1_scores
+    # f1_scores_list = []
+
+    # for i in range(np.shape(predicted)[1]):
+    #     f1s = f1_score(np.array(actual)[:, i], predicted[:, i], average = 'micro')
+    #     f1_scores_list.append(f1s)
+    # f1_scores = np.median(f1_scores_list)
+    # return f1_scores
+
+    # Create blank list to hold all outcomes from loop
+    all_metrics = []
+
+    # Loop to generate stats for each column
+    for i in range(len(category_names)):
+        accuracy = accuracy_score(y_test[:, i], y_preds[:, i], normalize=True)
+        precision = precision_score(y_test[:, i], y_preds[:, i], average='micro')
+        recall = recall_score(y_test[:, i], y_preds[:, i], average='micro')
+        f1 = f1_score(y_test[:, i], y_preds[:, i], average='micro')
+
+    # Append all metrics to blank list
+    all_metrics.append([accuracy, precision, recall, f1])
+
+    # Convert list to dataframe
+    performance_df = pd.DataFrame(np.array(all_metrics), index=category_names,
+                                  columns=['Accuracy', 'Precision', 'Recall', 'F1 Score'])
+
+    performance_df = performance_df.median()
+    return performance_df
 
 
 def build_model():
