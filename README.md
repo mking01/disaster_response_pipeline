@@ -25,11 +25,11 @@ The project has three main parts:
 
 # Instructions to Run
 1.  Run process_data.py
- - From the current working directory, run the following command: `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+ - From the current working directory, run the following command: `python process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
 
 2.  Run train_classifier.py
   - In the current working directory, create a 'models' folder.  Save train_classifier.py there.
-  - Run the following command: `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+  - Run the following command: `python train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 
 3.  Change directories to the app folder
   - Run `python run.py`
