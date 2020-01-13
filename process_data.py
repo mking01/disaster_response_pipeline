@@ -7,7 +7,11 @@ pd.set_option('max_rows', 1000)
 pd.set_option('max_columns', 1000)
 
 def load_data(messages_filepath, categories_filepath):
-    
+    '''
+    :param messages_filepath: file path for messages.csv data
+    :param categories_filepath: file path for categories.csv data
+    :return: dataframe with messages and categories data
+    '''
     # load messages dataset
     messages = pd.read_csv(messages_filepath)
     
@@ -19,7 +23,11 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
-    
+    '''
+
+    :param df: dataframe with messages and categories data
+    :return: cleaned dataframe
+    '''
     # create a dataframe of the 36 individual category columns
     categories = pd.DataFrame(df['categories'].str.split(';', expand = True))
     
@@ -55,11 +63,21 @@ def clean_data(df):
     
     
 def save_data(df, database_filename):
+    '''
+
+    :param df: cleaned dataframe
+    :param database_filename: name of database
+    :return:
+    '''
     engine = create_engine('sqlite:///' + database_filename)
     df.to_sql('Messages', engine, index=False, if_exists = 'replace')
 
 
 def main():
+    '''
+
+    :return: none, class structure that shows how the script processes
+    '''
     if len(sys.argv) == 4:
 
         messages_filepath, categories_filepath, database_filepath = sys.argv[1:]
